@@ -1,0 +1,81 @@
+{% extends 'portfolio/base.html' %} {% block content %} {% load static %}
+
+<section class="home" id="home">
+  <div class="home-content">
+    <h3>Hello, It's Me</h3>
+    <h1>Mashnunul Huq</h1>
+    <h3>
+      I am a <span>Fullstack Developer</span> with in depth experience on
+      <span class="es">Embedded System</span> &
+      <span class="dl">Deep Learning</span>.
+    </h3>
+    <p>
+      I have a can-do attitude and approach problems with patience and a learning mindset. I learn new lessons every day by trying new things and from my mistakes. I always respect others' opinions and think logically. I enjoy playing new songs as a Rhythm and Lead guitarist. As a member of Tigers am Main S.V. e.V., I participate in tournaments and love playing badminton.
+    </p>
+    <div class="social-media">
+      <a
+        href="https://www.linkedin.com/in/mashnunul-huq-javed-53715a110/"
+        target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+      <a
+        href="https://www.xing.com/profile/Mashnunul_Huq/web_profiles"
+        target="_blank"
+        ><i class="fa-brands fa-xing"></i
+      ></a>
+    </div class="home-download-buttons">
+    <a href="{% static 'portfolio/Resume_of_Mashnunul_Huq.pdf' %}" class="btn resume-btn"
+      >Resume</a
+    >
+    <a
+      href="{% static 'portfolio/Lebenslauf_von_Huq_Mashnunul.pdf' %}"
+      class="btn lebenslauf-btn"
+      >Lebenslauf</a
+    >
+  </div>
+  <div class="home-img">
+    <img src="{% static 'portfolio/own_logo.png' %}" alt="company-image" />
+  </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-img">
+      <img src="{% static 'portfolio/Picture.png' %}" alt="own-image" />
+    </div>
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Software Developper</h3>
+      <p>
+        <span>A versatile software developer</span>  with a strong foundation in Deep learning, Cloud computing, and Web-Development. With proven capability of building complex, scalable applications and delivering data-driven solutions, I am proficient in both front-end and back-end technologies, allowing me to manage entire software development lifecycles starting from and Embedded System to the Client webview.
+        <br> <br>
+<span>On the Artificial Intelligence front</span>, I have hands-on experience tuning hyperparameters for models like MobileNetv2 to optimize human presence detection using Ultrasonic Sensors with Redpitaya Embedded System and other complex tasks. I am working on transformer Embeddings for Generative AI of Ultrasonic Scenario analysis with object characteristics recognition and deep learning, with proficiency in frameworks such as Keras, TensorFlow, PyTorch, Fairseq with deploying proficiency on Azure cloud platform using terraform for automation, certified as a Microsoft Azure Data Scientist Associate and Azure AI Fundamentals.
+<br> <br>
+<span>As a Fullstack Web Developer</span>, I am adept at using technologies such as Django, Flask, Vue.js, and React, with significant experience with Django in developing secure and efficient authentication systems (e.g., JWT, OAuth2) and building APIs. I have also integrated CORS and CSRF protection mechanisms to enhance web security with experience on handling MySQL, PostgreSQL and MongoDB database along with ETL pipeline in Azure Databricks.
+      </p>
+    </div>
+</section>
+
+<section class="expertise" id="expertise">
+    <h2 class="heading">
+      My <span>Expertise</span> on <span>Services</span>
+    </h2>
+    <div class="expertise-container">
+        {% for expertise in expertises %}
+      <div class="expertise-box">
+        {% if expertise.icon %}
+        <i class="{{ expertise.icon }}"></i>
+        {% endif %}
+        <h3>{{ expertise.title }}</h3>
+        <p>
+          {{ expertise.description }}
+        </p>
+        {% if expertise.url %}
+        <a href="{{ expertise.url }}" class="btn" target="_blank">Read More</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+</section>
+
+
+ {% endblock %}

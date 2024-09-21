@@ -1,0 +1,41 @@
+{% extends 'portfolio/base.html' %} {% block content %} {% load static %}
+<section class="portfolio" id="portfolio">
+  <h2 class="heading">My <span>Projects</span></h2>
+  <div class="portfolio-container">
+    {% for project in projects %}
+    <div class="portfolio-box">
+      <img src="{{ project.image.url }}" alt="{{ project.image }}" />
+      <div class="portfolio-layer">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.description }}</p>
+        {% if project.url %}
+        <a href="{{ project.url }}" target="_blank"
+          ><i class="fa-solid fa-link"></i
+        ></a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="certificate" id="certificate">
+  <h2 class="heading">My <span>Certificates</span></h2>
+  <div class="certificate-container">
+    {% for certificate in certificates %}
+    <div class="certificate-box">
+      {% if certificate.icon %}
+      <img
+        src="{% static 'portfolio/' %}{{ certificate.icon }}"
+        alt="{{ certificate.icon }}"
+      />
+      {% endif %}
+      <h3>{{ certificate.title }}</h3>
+      <p>{{ certificate.description }}</p>
+      <a href="{{ certificate.url }}" class="btn" target="_blank"
+        >View Certificate</a
+      >
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

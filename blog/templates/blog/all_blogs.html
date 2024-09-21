@@ -1,0 +1,24 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
+
+<section class="blogs" id="expertise">
+  <h2 class="heading" id="blogstitle" class="font-weight-bold text-center">
+    Blog{{ blogs.count|pluralize }}
+  </h2>
+
+  <h3 class="text-center">
+    Total {{ blogs.count }} blog{{ blogs.count|pluralize }}
+  </h3>
+  <hr />
+  <div class="blogs-container">
+    {% for blog in blogs %}
+    <div class="blogs-box">
+      <a href="{% url 'blog:detail' blog.id %}">
+        <h3>{{ blog.title }}</h3>
+      </a>
+      <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
+      <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
