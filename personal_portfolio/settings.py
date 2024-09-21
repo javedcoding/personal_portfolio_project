@@ -137,3 +137,8 @@ EMAIL_HOST_USER = 'conundrumsolutions0@gmail.com'
 EMAIL_HOST_PASSWORD = 'ipnwennbqjsbjoee '
 EMAIL_USE_TLS = True
 CONTACT_EMAIL = 'mashnunul.huq@hotmail.com'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("No local file. It's the prod environment")
