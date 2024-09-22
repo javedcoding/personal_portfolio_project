@@ -387,6 +387,7 @@ hr {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 2.5rem;
+  max-width: 100%;
 }
 
 .portfolio-container .portfolio-box {
@@ -723,6 +724,7 @@ hr {
 
   .portfolio-container {
     grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
   }
 
   .contact form .input-box input {
