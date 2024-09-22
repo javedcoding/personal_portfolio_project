@@ -16,7 +16,7 @@
         <h3>{{ blog.title }}</h3>
       </a>
       <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
-      <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+      <p>{{ blog.description|striptags|truncatechars:50 }}</p>
     </div>
     {% endfor %}
   </div>
