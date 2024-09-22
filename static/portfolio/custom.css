@@ -519,16 +519,21 @@ hr {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  max-width: 100%;
+  padding: 1rem;
 }
 
 .blogs-box {
   flex: 1 1 30rem;
+  max-width: 100%;
   background-color: var(--compli-color-sec);
   padding: 3rem;
   border-radius: 2rem;
   text-align: center;
   border: 0.3rem solid var(--bg-color);
   transition: 0.5s;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .blogs-box:hover {
@@ -544,6 +549,7 @@ hr {
 .blogs-box p {
   font-size: 1.5rem;
   margin: 1rem 0 3rem;
+  word-wrap: break-word;
 }
 
 /* detail.html */
@@ -551,16 +557,26 @@ hr {
   background-color: var(--compli-color-thi);
   color: var(--fifth-bg-color);
   font-size: 2rem;
+  padding: 2rem; /* Ensure padding around the content */
+}
+
+.blog-container {
+  max-width: 100%; /* Ensure the container fits the screen */
+  margin: 7rem auto;
+  padding: 2rem;
+  box-sizing: border-box; /* Ensure padding is included within the width */
 }
 
 #blogdetailtitle {
   color: var(--fourth-bg-color);
   size: 6rem;
   font-style: italic;
+  margin-bottom: 2rem;
 }
 
 .blog h5 {
   font-size: 1.5rem;
+  line-height: 1.8;
 }
 
 @keyframes floatImage {
@@ -605,6 +621,19 @@ hr {
   .home-img img {
     margin-top: 2rem;
   }
+
+  .blog {
+    padding: 1rem;
+  }
+
+  .blog-container {
+    margin-top: 10rem;
+    padding: 1rem;
+  }
+
+  #blogdetailtitle {
+    font-size: 3rem; /* Decrease font size for smaller screens */
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -623,6 +652,7 @@ hr {
 
   .home {
     flex-direction: column;
+    margin-top: 10rem;
   }
 
   .home-content h3 {
@@ -652,12 +682,37 @@ hr {
     margin-top: 2rem;
   }
 
+  .portfolio {
+    margin-top: 10rem;
+  }
+
   .portfolio h2 {
     margin-bottom: 3rem;
   }
 
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogs {
+    margin-top: 10rem;
+  }
+
+  .blog {
+    margin-top: 10rem;
+    padding: 1rem;
+  }
+
+  .blog-container {
+    padding: 1rem;
+  }
+
+  #blogdetailtitle {
+    font-size: 2.5rem; /* Decrease font size for smaller screens */
+  }
+
+  .blog-container p {
+    font-size: 1.4rem;
   }
 }
 
@@ -673,9 +728,57 @@ hr {
   .contact form .input-box input {
     width: 100%;
   }
+
+  .blog-container {
+    padding: 1rem;
+  }
+
+  #blogdetailtitle {
+    font-size: 2rem;
+  }
+
+  .blog-container p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
 }
 
 @media screen and (max-width: 350px) {
+  .home-img img {
+    width: 90vw;
+  }
+
+  .about-img img {
+    width: 90vw;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .blogs-box {
+    flex: 1 1 100%; /* Full width on small screens */
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .blog-container {
+    padding: 0.5rem; /* Reduce padding on very small screens */
+  }
+
+  #blogdetailtitle {
+    font-size: 1.8rem; /* Decrease title size for very small screens */
+  }
+
+  .blog-container p {
+    font-size: 1.2rem; /* Decrease paragraph text size */
+  }
+}
+
+@media screen and (max-width: 275px) {
+  .home {
+    padding-top: 20rem;
+  }
   .home-img img {
     width: 90vw;
   }
